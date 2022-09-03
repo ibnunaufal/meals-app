@@ -4,18 +4,18 @@ import { CATEGORIES } from "../data/dummy-data";
 import CategoryGridTile from "../components/CategoryGridTile";
 
 function CategoryScreen() {
-
-    function renderItem(item) {
-        return(
-            <CategoryGridTile title={item.item.title} color={item.item.color} />
-        )
-    }
+  function renderItem(item) {
+    return <CategoryGridTile title={item.item.title} color={item.item.color} />;
+  }
 
   return (
     <View>
-      <FlatList data={CATEGORIES} 
-      keyExtractor={(item) => item.id}
-      renderItem={renderItem}
+      <FlatList
+        data={CATEGORIES}
+        keyExtractor={(item) => item.id}
+        renderItem={renderItem}
+        numColumns={2}
+        
       />
     </View>
   );
