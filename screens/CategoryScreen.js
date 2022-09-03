@@ -3,9 +3,20 @@ import React from "react";
 import { CATEGORIES } from "../data/dummy-data";
 import CategoryGridTile from "../components/CategoryGridTile";
 
-function CategoryScreen() {
+function CategoryScreen({navigation}) {
+  function pressHandler() {
+    console.log('pressed')
+    navigation.navigate('MealsOverview')
+  }
+
   function renderItem(item) {
-    return <CategoryGridTile title={item.item.title} color={item.item.color} />;
+    return (
+      <CategoryGridTile
+        title={item.item.title}
+        color={item.item.color}
+        onPress={pressHandler}
+      />
+    );
   }
 
   return (
@@ -15,7 +26,6 @@ function CategoryScreen() {
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
         numColumns={2}
-        
       />
     </View>
   );
