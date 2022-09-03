@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 15,
     height: Dimensions.get("window").height / 4,
-    borderRadius: 8,
+    borderRadius: 10,
     elevation: 4,
     backgroundColor: "white",
     shadowColor: "black",
