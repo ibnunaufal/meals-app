@@ -4,12 +4,14 @@ import { CATEGORIES } from "../data/dummy-data";
 import CategoryGridTile from "../components/CategoryGridTile";
 
 function CategoryScreen({navigation}) {
-  function pressHandler() {
-    console.log('pressed')
-    navigation.navigate('MealsOverview')
-  }
 
   function renderItem(item) {
+    function pressHandler() {
+        console.log('pressed')
+        navigation.navigate('MealsOverview',{
+            id: item.item.id
+        })
+      }
     return (
       <CategoryGridTile
         title={item.item.title}
