@@ -9,12 +9,12 @@ export default function MealsOverview({ navigation, route }) {
     return item.categoryIds.indexOf(id) >= 0;
   });
 
-  const catTitle = CATEGORIES.find((cat) => cat.id === id).title
+  const catTitle = CATEGORIES.find((cat) => cat.id === id).title;
   useLayoutEffect(() => {
     navigation.setOptions({
-      title: catTitle
-    })
-  })
+      title: catTitle,
+    });
+  });
   // useEffect(()=> {
   //   navigation.setOptions({
   //     title: catTitle
@@ -24,6 +24,7 @@ export default function MealsOverview({ navigation, route }) {
   function renderItem(item) {
     return (
       <MealItem
+        id={item.item.id}
         title={item.item.title}
         imageUrl={item.item.imageUrl}
         duration={item.item.duration}
